@@ -4,7 +4,8 @@
   "description": "command-line-application",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js"
   },
   "author": "aqib",
   "license": "MIT",
