@@ -150,13 +150,13 @@ function promptMenu() {
     });
 }
 
-function generateTeamHTML(team) {
-    const html = render(team);
-  
-    if (!fs.existsSync(OUTPUT_DIR)) {
-      fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-    }
-  
-    fs.writeFileSync(outputPath, html);
-    console.log(`Team HTML generated successfully at ${outputPath}`);
+function generateTeamHTML() {
+  const html = render(team);
+
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
+
+  fs.writeFileSync(outputPath, html);
+  console.log(`Team HTML generated successfully at ${outputPath}`);
+}
