@@ -1,6 +1,7 @@
 const Manager = require("./starter/lib/Manager");
 const Engineer = require("./starter/lib/Engineer");
 const Intern = require("./starter/lib/Intern");
+const Employee = require("./starter/lib/Employee");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -11,6 +12,37 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./starter/src/page-template.js");
 
 const team = [];
+
+function promptEmployee() {
+  console.log("Please enter the employee's information:");
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Name:",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Employee ID:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Email address:",
+      },
+    ])
+    .then((answers) => {
+      const employee = new Employee(
+        answers.name,
+        answers.id,
+        answers.email
+      );
+      team.push(employee);
+      promptMenu();
+    });
+}
 
 function promptManager() {
   console.log("Please enter the team manager's information:");
