@@ -1,15 +1,17 @@
 {
   "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "commandline-application",
+  "description": "command-line-application",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "Aqib",
+  "author": "aqib",
   "license": "MIT",
   "devDependencies": {
     "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.5"
   }
 }
